@@ -23,6 +23,5 @@ prng = Random.new
   Comment.create!(content: Faker::HarryPotter.quote,
                   user_id: prng.rand(1..20),
                   post_id: prng.rand(11..15))
-  # p "created a post!"
 end
 p "Success!"
