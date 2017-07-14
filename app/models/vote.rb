@@ -9,7 +9,7 @@ class Vote < ApplicationRecord
   # validates :user, uniqueness: { scope: :comment }
   # validates :comment, uniqueness: { scope: :user }
 
-  # validates :uniqueness_by_votable
+  validate :uniqueness_by_votable
 
   private
   # Custom validation

@@ -11,6 +11,6 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :votes, only: [:show, :new, :create]
+  resources :votes, only: [:show, :new, :create]
 
 end
