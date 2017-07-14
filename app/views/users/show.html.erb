@@ -1,0 +1,10 @@
+<h1>User</h1>
+
+<h2>Name: <%= @user.first_name %> <%= @user.last_name %></h2>
+
+<h2>Subscribed Subreddits: </h2>
+<ol>
+  <% @user.subreddits.each do |subreddit| %>
+      <li><%= subreddit.name %></li>
+  <% end %>
+</ol>

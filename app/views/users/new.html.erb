@@ -1,0 +1,42 @@
+<h1>Sign up to Kevin's Reddit!</h1>
+
+<!--
+1) @user is the actual object that is being modified right now
+2.1) Routing options are passed to the url hash
+2.2) HTML options are passed into the html hash
+2.3) can provide a :namespace option for your form to ensure uniqueness of id attributes on form elements.
+     The namespace attribute will be prefixed with underscore on the generated HTML id.
+3) The form_for method yields a form builder object (the f variable).
+4) Methods to create form controls are called on the form builder object f.
+-->
+
+<%= form_for @user, url: {action: "create"}, html: {class: "sign_up_form"} do |f| %>
+    <!--Error message-->
+    <% if @user.errors.any? %>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li> <%= msg %></li>
+          <% end %>
+        </ul>
+    <% end %>
+
+    <div class="field">
+      <%= f.text_field :username, placeholder: "User Name", autofocus: true %>
+    </div>
+    <div class="field">
+      <%= f.text_field :first_name, placeholder: "First Name", autofocus: true %>
+    </div>
+    <div class="field">
+      <%= f.text_field :last_name, placeholder: "Last Name", autofocus: true %>
+    </div>
+    <div class="field">
+      <%= f.email_field :email, placeholder: "E-Mail", autofocus: true %>
+    </div>
+    <div class="field">
+      <%= f.password_field :password, placeholder: "Password", autofocus: true %>
+    </div>
+
+    <%= f.submit "Create User" %>
+<% end %>
+
+<input type="button" value="Click me" onclick="msg()" />

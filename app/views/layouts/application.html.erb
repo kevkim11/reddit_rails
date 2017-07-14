@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reddit</title>
+    <%= csrf_meta_tags %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--<style type="text/css">-->
+
+    <!--</style>-->
+  </head>
+
+  <body>
+  <nav class="navbar navbar-light bg-faded">
+    <%= link_to image_tag("Reddit_logo_and_wordmark.svg",class:'logo', width: '120', height: '40', alt: ''), root_path %>
+  </nav>
+  <div class="container">
+    <%= yield %>
+  </div>
+  </body>
+</html>

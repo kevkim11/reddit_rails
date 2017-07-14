@@ -1,0 +1,10 @@
+<h1>Subreddits/Index</h1>
+
+<h2>Subreddit Names</h2>
+
+<ol>
+<% @subreddits.each do |sr| %>
+      <li>r/<%= link_to sr.name, subreddit_path(sr) %> </li>
+<% end %>
+</ol>
+
