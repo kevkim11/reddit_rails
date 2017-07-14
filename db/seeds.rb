@@ -12,16 +12,16 @@ prng = Random.new
                last_name: Faker::Name.last_name,
                email: Faker::Internet.email)
 
-  Subreddit.create!(name: Faker::Team.creature,
-                    description: Faker::Lorem.sentence)
-
-  Post.create!(title: Faker::Food.dish,
-               post_type:[0, 1].sample,
-              user_id: prng.rand(10..20),
-              subreddit_id: prng.rand(10..15))
-
-  Comment.create!(content: Faker::HarryPotter.quote,
-                  user_id: prng.rand(1..20),
-                  post_id: prng.rand(11..15))
+  # Subreddit.create!(name: Faker::Team.creature,
+  #                   description: Faker::Lorem.sentence)
+  #
+  # Post.create!(title: Faker::Food.dish,
+  #              post_type:[0, 1].sample,
+  #             user_id: prng.rand(10..20),
+  #             subreddit_id: prng.rand(10..15))
+  #
+  # Comment.create!(content: Faker::HarryPotter.quote,
+  #                 user_id: prng.rand(1..20),
+  #                 post_id: prng.rand(11..15))
 end
 p "Success!"
