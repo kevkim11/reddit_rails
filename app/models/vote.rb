@@ -1,19 +1,11 @@
 class Vote < ApplicationRecord
   belongs_to :votable, polymorphic: true
 
-  # #uniqueness between a user and comment
-  # validates :user, uniqueness: { scope: :post }
-  # validates :votable_id, :votable_type, uniqueness: { scope: :user }
-  #
-  # #uniqueness between a user and comment
-  # validates :user, uniqueness: { scope: :comment }
-  # validates :comment, uniqueness: { scope: :user }
-
-  validate :uniqueness_by_votable
+  # validate :uniqueness_by_votable
 
   private
-  # Custom validation
+  # TODO get an error with .add("you already voted")
   def uniqueness_by_votable
-    errors.add("you already voted!") if Vote.where(votable: self.votable, user: self.user).count > 0
+    errors.add("you already voted!") if Vote.where(votable: self.votable, user_id: self.user_id).count > 0
   end
 end

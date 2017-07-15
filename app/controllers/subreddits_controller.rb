@@ -6,7 +6,6 @@ class SubredditsController < ApplicationController
 
   def show
     @subreddit = Subreddit.find(params[:id])
-
     @vote = Vote.new
   end
 end

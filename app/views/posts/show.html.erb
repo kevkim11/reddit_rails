@@ -3,8 +3,10 @@
 <h2>Name: <%= @post.title %></h2>
 <h5>Post Type: <%= @post.post_type %></h5>
 <h5>Comments:</h5>
-<div>
+<div class='col-sm-6 col-sm-offset-3'>
   <% @post.comments.each do |comment| %>
-      <p><%= comment.content %></p>
+      <p class="mb-0"><%= comment.content %></p>
+      <footer> via <%= comment.user.username %> | created at: <%= comment.created_at%> </footer>
+      <p></p>
   <% end %>
 </div>

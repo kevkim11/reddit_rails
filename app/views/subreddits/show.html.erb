@@ -1,4 +1,4 @@
-<h1>Subreddits</h1>
+<h1>Subreddit Show</h1>
 
 <h2>Name: <%= @subreddit.name %></h2>
 <h3>Description: <%= @subreddit.description %></h3>
@@ -6,25 +6,21 @@
   <% @subreddit.posts.each do |post| %>
     <li class="media">
       <div class="post-vote">
-
         <%= form_for @vote, url: {action: "create", controller: "votes"}, html: {class: ""} do |f| %>
             <%= f.hidden_field :user_id, value: 1 %>
-            <%= f.hidden_field :votable_type, value: "post"%>
+            <%= f.hidden_field :votable_type, value: "Post"%>
             <%= f.hidden_field :votable_id, value: post.id %>
             <%= f.hidden_field :up_down_vote, value: true%>
           <%= f.submit "👍", class: "btn btn-xs down-vote-btn" %>
         <% end %>
-
-          <span>count</span>
-
+        <span><%= post.vote_count %></span>
         <%= form_for @vote, url: {action: "create", controller: "votes"}, html: {class: ""} do |f| %>
             <%= f.hidden_field :user_id, value: 1 %>
-            <%= f.hidden_field :votable_type, value: "post"%>
+            <%= f.hidden_field :votable_type, value: "Post"%>
             <%= f.hidden_field :votable_id, value: post.id %>
             <%= f.hidden_field :up_down_vote, value: false%>
             <%= f.submit "👎", class: "btn btn-xs down-vote-btn" %>
         <% end %>
-        
       </div>
       <img class="d-flex mr-3 m-img" src="#" alt="64x64" width="64px" height="64px">
       <div class="media-body mbody">
