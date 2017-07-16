@@ -5,6 +5,23 @@
 <h5>Comments:</h5>
 <div class='col-sm-6 col-sm-offset-3'>
   <% @post.comments.each do |comment| %>
+      <div class="voter">
+        <%= form_for @vote, url: {action: "create", controller: "votes"}, html: {class: ""} do |f| %>
+            <%= f.hidden_field :user_id, value: 1 %>
+            <%= f.hidden_field :votable_type, value: "Comment"%>
+            <%= f.hidden_field :votable_id, value: comment.id %>
+            <%= f.hidden_field :up_down_vote, value: true%>
+            <%= f.submit "👍", class: "btn btn-xs down-vote-btn" %>
+        <% end %>
+        <%= form_for @vote, url: {action: "create", controller: "votes"}, html: {class: ""} do |f| %>
+            <%= f.hidden_field :user_id, value: 1 %>
+            <%= f.hidden_field :votable_type, value: "Comment"%>
+            <%= f.hidden_field :votable_id, value: comment.id %>
+            <%= f.hidden_field :up_down_vote, value: false%>
+            <%= f.submit "👎", class: "btn btn-xs down-vote-btn" %>
+        <% end %>
+      </div>
+      <span><%= comment.vote_count %></span>
       <p class="mb-0"><%= comment.content %></p>
       <footer> via <%= comment.user.username %> | created at: <%= comment.created_at%> </footer>
       <p></p>

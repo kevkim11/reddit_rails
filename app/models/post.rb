@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   # polymorphism for votes in posts
-  has_many :votes, as: :votable #dependent destroy?
+  # TODO dependent destroy?
+  has_many :votes, as: :votable
 
   # one to many relationship
   belongs_to :subreddit

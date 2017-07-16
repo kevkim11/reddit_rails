@@ -5,22 +5,23 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @vote = Vote.new
   end
 
-  # def new
-  #   @post = Post.new
-  # end
+  def new
+    @post = Post.new
+  end
 
   def create
-    @post = Post.new(params[:post])
-    @post.user = current_user
-    
-    # p "This is upvote"
-    # p "The button works!"
+    @post = Post.new(post_params)
+    # @post.user = current_user
 
   end
-  private
 
+  private
+  def post_params
+    params.require(:user).permit(:title, :post_type)
+  end
 
 
 end

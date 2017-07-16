@@ -5,7 +5,7 @@
 <ul class="list-unstyled">
   <% @subreddit.posts.each do |post| %>
     <li class="media">
-      <div class="post-vote">
+      <div class="voter">
         <%= form_for @vote, url: {action: "create", controller: "votes"}, html: {class: ""} do |f| %>
             <%= f.hidden_field :user_id, value: 1 %>
             <%= f.hidden_field :votable_type, value: "Post"%>
