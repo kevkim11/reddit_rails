@@ -1,0 +1,21 @@
+<h1>New Post!</h1>
+
+<%= form_for @post, url: {action: "create"}, html: {class: "create post_form"} do |f| %>
+    <!--Error message-->
+    <% if @user.errors.any? %>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+              <li> <%= msg %></li>
+          <% end %>
+        </ul>
+    <% end %>
+
+    <div class="field">
+      <%= f.text_field :title, placeholder: "Title", autofocus: true %>
+    </div>
+    <div class="field">
+      <%= f.text_field :post_type, placeholder: "post_type", autofocus: true %>
+    </div>
+
+    <%= f.submit "Create User" %>
+<% end %>

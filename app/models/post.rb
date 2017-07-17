@@ -9,5 +9,5 @@ class Post < ApplicationRecord
   
   has_many :comments
 
-  enum type: ['link','text']
+  enum post_type: ['link','text']
 end
