@@ -15,10 +15,15 @@
 
   <body>
   <nav class="navbar navbar-light bg-faded">
+    <div class="container navbar-container">
+
     <%= link_to image_tag("Reddit_logo_and_wordmark.svg",class:'logo', width: '120', height: '40', alt: ''), root_path %>
-  <a href="">
-    <img>
-  </a>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/users/new.html.erb"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <!--new_user_registration_path-->
+    </ul>
+    </div>
   </nav>
   <div class="container">
     <%= yield %>

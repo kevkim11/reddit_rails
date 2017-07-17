@@ -34,3 +34,7 @@ h1{
     float: left;
     display: inline;
 }
+
+.navbar {
+    background-color: #CEE3F8;
+}
