@@ -28,6 +28,6 @@ class User < ApplicationRecord
     Can unlock via email or after a specified time period.
 =end
 
-  devise :database_authenticatable, :registerable, :validatable,
+  devise :database_authenticatable, :registerable, :validatable
          # :recoverable, :trackable, :rememberable,
 end
