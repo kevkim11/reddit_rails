@@ -3,7 +3,6 @@ class VotesController < ApplicationController
 
   def new
     @vote = Vote.new
-    # @vote = @votable
   end
 
   def create

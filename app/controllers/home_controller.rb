@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
-    # redirect_to @subreddits
+    @posts = Post.all.order(created_at: :desc)
+    @vote = Vote.new
   end
 end

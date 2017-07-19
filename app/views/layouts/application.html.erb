@@ -14,12 +14,24 @@
   </head>
 
   <body>
+  <div id="fb-root"></div>
+  <script>
+//      (function(d, s, id) {
+//      var js, fjs = d.getElementsByTagName(s)[0];
+//      if (d.getElementById(id)) return;
+//      js = d.createElement(s); js.id = id;
+//      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+//      fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
+  </script>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <nav class="navbar navbar-light bg-faded">
     <div class="container navbar-container">
 
     <%= link_to image_tag("Reddit_logo_and_wordmark.svg",class:'logo', width: '120', height: '40', alt: ''), root_path %>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="<%= new_user_path %>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <!--<li><a href="/users/new"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>-->
       <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
     </div>

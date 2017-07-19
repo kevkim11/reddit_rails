@@ -1,4 +1,33 @@
 <div>
   <p> This is my Reddit's Homepage</p>
 </div>
+<% num = 0 %>
+<ol class="list-group">
+  <% @posts.each do |post| %>
+      <li class="media list-group-item">
 
+        <div class="voter">
+          <%= form_for @vote, url: {action: "create", controller: "votes"}, html: {class: ""} do |f| %>
+              <%= f.hidden_field :user_id, value: 1 %>
+              <%= f.hidden_field :votable_type, value: "Post"%>
+              <%= f.hidden_field :votable_id, value: post.id %>
+              <%= f.hidden_field :up_down_vote, value: true%>
+              <%= f.submit "👍", class: "btn btn-xs down-vote-btn" %>
+          <% end %>
+          <span><%= post.vote_count %></span>
+          <%= form_for @vote, url: {action: "create", controller: "votes"}, html: {class: ""} do |f| %>
+              <%= f.hidden_field :user_id, value: 1 %>
+              <%= f.hidden_field :votable_type, value: "Post"%>
+              <%= f.hidden_field :votable_id, value: post.id %>
+              <%= f.hidden_field :up_down_vote, value: false%>
+              <%= f.submit "👎", class: "btn btn-xs down-vote-btn" %>
+          <% end %>
+        </div>
+        <img class="d-flex mr-3 m-img" src="#" alt="64x64" width="64px" height="64px">
+        <div class="media-body mbody">
+          <h5 class="mt-0 mb-1"><%= link_to post.title, controller:'posts', action: 'show', subreddit_id: post.subreddit_id, id: post.id %></h5>
+          <%= post.subreddit.name %>
+        </div>
+      </li>
+  <% end %>
+</ol>

@@ -34,7 +34,18 @@ h1{
     float: left;
     display: inline;
 }
-
+.post-num {
+    float: left;
+    text-align: center;
+}
 .navbar {
     background-color: #CEE3F8;
+}
+
+.media.list-group-item {
+    display: list-item;
+}
+
+.list-group {
+    list-style: decimal inside;
 }

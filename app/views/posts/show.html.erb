@@ -3,6 +3,7 @@
 <h2>Name: <%= @post.title %></h2>
 <h5>Post Type: <%= @post.post_type %></h5>
 <h5>Comments:</h5>
+<!--<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>-->
 <div class='col-sm-6 col-sm-offset-3'>
   <% @post.comments.each do |comment| %>
       <div class="voter">
